@@ -80,11 +80,11 @@ For datasets and workflows that are identical, we can reference the galaxy datas
 
 Dataset 1:   
   class: File  
-  # path: dataset1.txt  
+  `# path: dataset1.txt`  
   galaxy_id: 4838ba20a6d867654ec4d8bfbbf857c6    
 Dataset 2:  
   class: File  
-  # path: dataset2.txt  
+  `# path: dataset2.txt`  
   galaxy_id: 4838ba20a6d86765f0adb9ebe2ca3f41    
 Number of lines: 3  
 
@@ -113,8 +113,8 @@ The resulting history is : [Test_Planemo_run_with_profile](https://usegalaxy.eu/
 
 We first explore the pangolin folder using
 
-`cd ../pangolin`  
-`ls` to see what the folder contains   
+`cd ../pangolin`     
+`ls` to see what the folder contains     
 
 It contains 
 
@@ -125,6 +125,8 @@ We then create a job file called `*vcf2lineage-job.yml` (reference previous tuto
 
 The unique step in this automation is writing a script in the construction of the job file.   
 This is to add every element of the variant calling collection.   
+
+**Script1
 
 import sys  
 from glob import glob  
@@ -162,10 +164,11 @@ We then shell a script to
 - invoke with planemo run
 - move the processed batch to data/complete after execution.
 
+**Script 2. 
 
-`for batch in `ls -d data/batch*`; do`
+for batch in `ls -d data/batch*`; do  
 
-    batch_name=`basename $batch   .  
+     batch_name=`basename $batch   .  
      cp vcf2lineage-job-template.yml vcf2lineage-${batch_name}-job.yml  
      python create_job_file.py vcf2lineage-${batch_name}-job.yml $batch  
      # replace with your own workflow ID below  
@@ -193,5 +196,5 @@ The resulting histories:
 
 #### Observation
 
-Loading each dataset was very slow. The whole process took over 4 hours. 
-In hindsight, i should have used the **--simultaneous_uploads** flag to upload simultaneously.  
+Loading each dataset was very slow. The whole process took over 4 hours.    
+In hindsight, i should have used the **--simultaneous_uploads** flag to upload simultaneously.     
