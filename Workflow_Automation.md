@@ -54,10 +54,10 @@ We run the commands below to create our datasets
  ### Invoking the workflow with planemo
  
  We require the following to invoke the workflow
- -  `galaxy url`
- -  `galaxy API key`
- -  `history name`
- -  `tag (optional)`
+ -  `galaxy url` -> https://usegalaxy.eu
+ -  `galaxy API key`-> 3bd4853b3af6c5c00b292ea806597b58
+ -  `history name`-> Test Planemo WF
+ -  `tag (optional)`-> planemo-tutorial
  
  #### code
 * `planemo run  tutorial.ga tutorial-init-job.yml --galaxy_url https://usegalaxy.eu --galaxy_user_key 3bd4853b3af6c5c00b292ea806597b58 --history_name "Test Planemo WF" --tags "planemo-tutorial"`  
@@ -72,10 +72,8 @@ Using the **no_wait** flag exits the planemo run command as soon as the two data
 
 ### Using Galaxy workflow and dataset IDs
 
-Every dataset and workflow in galaxy has a unique hexadecimal id associated with them.
-
-The **dataset Ids** are obtained from the **History Content API ID** under the **Dataset Information tab**, which can accessed via the **info button** in history.
-
+Every dataset and workflow in galaxy has a unique hexadecimal id associated with them.  
+The **dataset Ids** are obtained from the **History Content API ID** under the **Dataset Information tab**, which can accessed via the **info button** in history.   
 For datasets and workflows that are identical, we can reference the galaxy dataset ids in the job file and run them on the server.
 
 Dataset 1:   
